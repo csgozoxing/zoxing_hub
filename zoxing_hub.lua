@@ -205,9 +205,33 @@ local Games = {
         }
     },
 
+    --=========================================================
+    -- +1 Goal Kick
+    --=========================================================
+
+    ["+1 Goal Kick"] = {
+
+        PlaceIds = {
+            76122410351423,
+        },
+
+        Features = {
+
+            {
+                Name = "Auto Click",
+                Icon = "⚡",
+
+                Callback = createToggleableFeature(function()
+                    game:GetService("ReplicatedStorage").Packages.Network.RemoteEventStorage.JuggleClick:FireServer()
+                end, 0.1)
+            },
+        }
+    },
+
+
 
     --=========================================================
-    -- NEW GAME
+    -- DRAIN WATER
     --=========================================================
 
     ["+1 Drain Water"] = {
@@ -240,6 +264,8 @@ local Games = {
     },
 
 }
+
+
 
 
 --// =========================================================
