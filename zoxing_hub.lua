@@ -210,33 +210,32 @@ local Games = {
     -- NEW GAME
     --=========================================================
 
-    ["New Game"] = {
+    ["+1 Drain Water"] = {
 
         PlaceIds = {
-            123456789,
+            103883942725157,
         },
 
         Features = {
 
             {
-                Name = "Option 1",
+                Name = "Auto Click",
                 Icon = "⚡",
 
                 Callback = createToggleableFeature(function()
-                    -- FUNCTION
+                    game:GetService("ReplicatedStorage").Remote.Event.Level["[C-S]Click"]:FireServer(95)
                 end, 0.1)
             },
 
 
             {
-                Name = "Option 2",
+                Name = "Auto Rebirth",
                 Icon = "⭐",
 
                 Callback = createToggleableFeature(function()
-                    -- FUNCTION
+                    game:GetService("ReplicatedStorage").Remote.Event.Rebirth["[C - S]TryRebirth"]:FireServer()
                 end, 1)
             },
-
         }
     },
 
